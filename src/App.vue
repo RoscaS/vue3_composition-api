@@ -1,32 +1,18 @@
 <template>
-  <img src="./logo.png">
-  <h1>Hello Vue 3!</h1>
-  <button @click="inc">Clicked {{ count }} times.</button>
+  <h2>Example 1</h2>
+  <Counter/>
+  <hr>
+  <h2>Example 2</h2>
+  <User label="Demo" title="Fetch"/>
+  
 </template>
 
 <script>
-import { ref } from 'vue'
+import Counter from './components/Counter.vue';
+import User from './components/User.vue';
 
 export default {
-  setup() {
-    const count = ref(0)
-    const inc = () => {
-      count.value++
-    }
-
-    return {
-      count,
-      inc
-    }
-  }
-}
+  name: 'Modal',
+  components: { User, Counter },
+};
 </script>
-
-<style scoped>
-img {
-  width: 200px;
-}
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-</style>
