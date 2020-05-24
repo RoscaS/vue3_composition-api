@@ -16,7 +16,7 @@
       title: String
     },
     setup(props) {
-      console.log(toRefs(props))
+      // console.log(toRefs(props))
       const {
         loading,
         error,
