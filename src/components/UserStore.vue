@@ -8,14 +8,18 @@
 
 <script>
   import { useStore } from 'vuex';
-  import { ref, computed } from 'vue';
+  import { ref, computed, watch } from 'vue';
+
 
   export default {
     setup(props) {
       const input = ref('');
+      watch(input, (val, newVal) => console.log(val));
+      
+      
       const store = useStore();
       const users = computed(() => store.state.users.value);
-      const addUser = () => store.dispatch("users/add", input.value);
+      const addUser = () => store.dispatch('users/add', input.value);
 
       return { input, users, addUser };
     },
